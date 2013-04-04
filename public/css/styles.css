@@ -1,0 +1,107 @@
+﻿body {
+    background-color: #fff;
+    border-top: solid 10px #000;
+    color: #333;
+    font-size: 1em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+}
+
+
+.logo {
+    background: url("../img/logo.png") no-repeat;
+    height: 180px;
+}
+
+div.header {
+	height: 180px;
+}
+
+.geek {
+	font-family: audiowide;
+}
+
+.featured {
+	background-color: #7ac0da;
+	background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
+	background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
+	background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6));
+	background-image: -webkit-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
+	background-image: linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
+	color: #3e5667;
+	padding: 20px 40px 30px 40px;
+}
+
+.featured .geek {
+	color: #fff;
+}
+
+ol.round {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ol.round li {
+    margin: 25px 0;
+    padding-left: 45px;
+}
+
+ol.round li.zero {
+    background: url("../img/orderedList0.png") no-repeat;
+}
+
+ol.round li.one {
+    background: url("../img/orderedList1.png") no-repeat;
+}
+
+ol.round li.two {
+    background: url("../img/orderedList2.png") no-repeat;
+}
+
+ol.round li.three {
+    background: url("../img/orderedList3.png") no-repeat;
+}
+
+ol.round li.four {
+    background: url("../img/orderedList4.png") no-repeat;
+}
+
+div.content {
+	background-color: #f9f9f9;
+	padding:20px;
+	border: 1px solid rgb(221, 221, 221);
+	min-height: 100px;
+}
+
+div.footer {
+	margin-top: 40px;
+}
+
+span.email-label {
+	padding: 10px;
+}
+
+#table-placeholder .popover, #invitees .popover {
+	max-width: 420px;
+}
+
+span.rank {
+	margin-right: 3px;
+	cursor: pointer;
+}
+
+span.rank-friend {
+	cursor: pointer;
+}
+
+.input-validation-error { border-color: #f00 !important }
+.input-validation-valid  { /* Optional: you can set whatever style you want */ }
+.field-validation-error { color: #f00 }
+.field-validation-valid { display: none }
+.validation-summary-errors { font-weight: bold; color: #f00 }
+.validation-summary-valid { display: none }
+
+div.map {
+	height: 500px;
+}
+
+#map-canvas img{max-width:none}

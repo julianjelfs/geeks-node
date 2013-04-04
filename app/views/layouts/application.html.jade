@@ -1,0 +1,58 @@
+!!! html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Geek's Dilemma
+    meta(name="description", content="")
+    meta(name="author", content="")
+    meta(name="viewport", content="width=device-width")
+
+    // The HTML5 shim, for IE6-8 support of HTML elements
+    //if lt IE 9
+      script(src="http://html5shim.googlecode.com/svn/trunk/html5.js")
+
+    != styleLink('/css/bootstrap.min.css', {rel:'stylesheet'})
+    != styleLink('/css/styles.css', {rel:'stylesheet'})
+    != styleLink('/css/bootstrap.responsive.min.css', {rel:'stylesheet'})
+    != styleLink('http://fonts.googleapis.com/css?family=Russo+One|Press+Start+2P|Audiowide', {rel:'stylesheet'})
+
+    // The fav and touch icons
+    link(rel="shortcut icon", href="/images/favicon.ico")
+    link(rel="apple-touch-icon", href="images/apple-touch-icon.png")
+    link(rel="apple-touch-icon", sizes="72x72", href="images/apple-touch-icon-72x72.png")
+    link(rel="apple-touch-icon", sizes="114x114", href="images/apple-touch-icon-114x114.png")
+
+  body(ng-app="geeks")
+      .container-fluid
+        .row-fluid
+            .span3.offset1.logo
+            .span7
+                .row-fluid
+                    ul#nav-bar.nav.nav-tabs
+                        li#home-nav.active
+                            a(href="/") Home
+                        li#events-nav
+                            a(href="/events") Events
+                        li#friends-nav
+                            a(href="/friends") Friends
+                        li#about-nav
+                            a(href="/about") About
+                        li.pull-right#login-nav
+                            a(href="/login") Log In
+
+                .row-fluid
+                    h1.geek.pull-right Geek's Dilemma
+        .row-fluid
+            #body-placeholder.span10.offset1
+                != yield()
+        .row-fluid.footer
+            p.span10.offset1 &copy; Geek's Dilemma
+
+!= scriptLink('/js/jquery.min.js', {type:'text/javascript'})
+!= scriptLink('/js/bootstrap.min.js', {type:'text/javascript'})
+!= scriptLink('/js/angular.js', {type: 'text/javascript'})
+!= scriptLink('/js/angular-ui.js', {type: 'text/javascript'})
+!= scriptLink('/js/core/core.js', {type: 'text/javascript'})
+!= scriptLink('/js/config/init.js', {type: 'text/javascript'})
+!= scriptLink('http://maps.googleapis.com/maps/api/js?sensor=false', {type: 'text/javascript'})
+!= scriptLink('/js/geeks.js', {type: 'text/javascript'})

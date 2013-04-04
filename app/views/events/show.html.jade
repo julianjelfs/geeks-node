@@ -1,0 +1,35 @@
+
+
+
+
+<div id="event-content" class="content ng-scope" ng-controller="EventCtrl">
+<form class="form" name="form">
+
+    <input id="Longitude" name="Longitude" type="hidden" value="{{theEvent.position.nb}}" />
+    <input id="Latitude" name="Latitude" type="hidden" value="{{theEvent.position.mb}}" />
+
+    <div class="row-fluid">
+        <div class="span6">
+            <fieldset>
+                <legend class="geek">Enter details to create a new event</legend>
+                <textarea rows="4" ng-model="model.Description" placeholder="Description" required class="input-xxlarge input-block-level"></textarea>
+                <input type="datetime" ng-model="model.Date" class="input-xxlarge input-block-level" placeholder="Date and time" required/>
+                <input type="text" ng-model="model.Venue" class="input-xxlarge input-block-level" placeholder="Venue" required />
+                <div id="map-canvas" ui-map="eventMap" class="map"
+                    ui-event="{'map-click': 'moveMarker($event)' }"
+                    ui-options="mapOptions">
+                </div>
+                <br/>
+                <button class="btn" type="submit" ng-click="submit()">Save</button>
+            </fieldset>
+
+        </div>
+        <div class="span6">
+            <fieldset>
+                <legend class="geek">Who's invited</legend>
+                <friend-picker></friend-picker>
+            </fieldset>
+        </div>
+    </div>
+</form>
+</div>

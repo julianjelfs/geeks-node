@@ -1,0 +1,29 @@
+!= styleLink('/css/auth-buttons.css', {rel:'stylesheet'})
+
+.row-fluid.content
+    .span5
+        form#login-form(action="#{localPath}", method="POST")
+            fieldset
+                legend.geek Log in using local account
+                .control-group
+                    label.control-label(for="username") Username
+                    .controls
+                        != contentTag('input', params.username, {type:'text', name:'username'})
+                .control-group
+                    label.control-label(for="password") Password
+                    .controls
+                        != contentTag('input', params.password, {type:'text', name:'password'})
+
+                != contentTag('input', 'Log in', {type: 'submit', class: 'btn btn-danger'})
+
+    .span4
+        fieldset
+            legend.geek Log in with another account
+            p
+                a.btn.btn-large(href="#{geddy.config.fullHostname}#{twitterPath}") Log in with Twitter
+
+            p
+                a.btn.btn-large(href="#{geddy.config.fullHostname}#{facebookPath}") Log in with Facebook
+
+            p
+                a.btn.btn-large(href="#{geddy.config.fullHostname}#{facebookPath}") Log in with Google

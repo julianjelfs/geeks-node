@@ -1,0 +1,25 @@
+-  var isUpdate = params.action == 'edit';
+-  var formTitle = isUpdate ? 'Update details of the event' : 'Enter details to create an event';
+-  var action = isUpdate ? eventsPath(params.id) + '?_method=PUT' : eventsPath;
+-  var deleteAction = isUpdate ? todoPath(params.id) + '?_method=DELETE' : '';
+-  var errors = params.errors;
+
+form.form(name="form")
+    input#Longitude(type="hidden", value="{{theEvent.position.nb}}")
+    input#Latitude(type="hidden", value="{{theEvent.position.mb}}")
+
+    .row-fluid
+        .span6
+            fieldset
+                legend.geek
+                    != formTitle
+                textarea.input-xxlarge.input-block-level(rows="4", ng-model="model.Description", placeholder="Description")
+                input.input-xxlarge.input-block-level(type="datetime", ng-model="model.Date", placeholder="Date and time", required)
+                input.input-xxlarge.input-block-level(type="text", ng-model="model.Venue", placeholder="Venue", required)
+                .map#map-canvas(ui-map="eventMap", ui-event="{'map-click': 'moveMarker($event)' }", ui-options="mapOptions")
+                br
+                button.btn(type="submit", ng-click="submit()") Save
+        .span6
+            fieldset
+                legend.geek Who's invited
+                friend-picker
